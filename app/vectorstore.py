@@ -1,6 +1,6 @@
 import os
 from typing import Dict, Any, List, Optional, Tuple
-from app.embeddings.onnx_embeddings import OnnxEmbeddings
+from app.embeddings.local_minilm_embeddings import LocalMiniLMEmbeddings
 from pymilvus import AnnSearchRequest, RRFRanker
 from app.milvus_client import get_milvus_client
 
@@ -16,16 +16,20 @@ MILVUS_URI = os.getenv("MILVUS_URI")
 # ONNX model settings
 MODEL_DIR = os.getenv("MODEL_DIR", "/home/karthik/projects/ai-models/onnx/all-MiniLM-L6-v2")
 EMBEDDING_DIM = int(os.getenv("EMBEDDING_DIM", "384"))
-ONNX_PROVIDER = os.getenv("ORT_PROVIDER", "AUTO")  # AUTO | CUDA | CPU
 
 # Default embedding model
 def get_embeddings():
-    """Get the ONNX embeddings model."""
+    from app.embeddings.onnx_embeddings import OnnxEmbeddings
+    ONNX_PROVIDER = os.getenv("ORT_PROVIDER", "AUTO")  # AUTO | CUDA | CPU
     return OnnxEmbeddings(
         model_dir=MODEL_DIR,
         embedding_dim=EMBEDDING_DIM,
         provider=ONNX_PROVIDER,
     )
+    # """Get the local all-MiniLM-L6-v2 ONNX model."""
+    # return LocalMiniLMEmbeddings(
+    #     model_dir=MODEL_DIR,
+    # )
 
 def get_connection_args() -> Dict[str, Any]:
     """Get Milvus connection arguments based on environment."""
