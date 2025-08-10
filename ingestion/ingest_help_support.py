@@ -30,22 +30,23 @@ def ingest_via_api(items: List[Dict[str, Any]], api_url: str):
     print(resp.json())
 
 def ingest_direct(items: List[Dict[str, Any]]):
-    from app.vectorstore import add_texts_to_collection, HELP_COLLECTION
+    from app.vectorstore import add_texts_to_collection, HELP_COLLECTION, get_embeddings
     from app.schemas import IngestHelpSupportItem
-    
     # Process items
     docs = [IngestHelpSupportItem(**it) for it in items]
-
     # Skip duplicate IDs
     seen = set()
     texts = []
     metadatas = []
     ids = []
+    dense_embeddings = []
+    embedder = get_embeddings()
     for d in docs:
         if d.id in seen:
             continue
         seen.add(d.id)
-        texts.append(f"{d.title}\n\n{d.content}")
+        text = f"{d.title}\n\n{d.content}"
+        texts.append(text)
         metadatas.append({
             "url": d.url,
             "title": d.title,
@@ -53,11 +54,10 @@ def ingest_direct(items: List[Dict[str, Any]]):
             "tags": ",".join(d.tags or []),
         })
         ids.append(d.id)
-
+        dense_embeddings.append(embedder.embed_query(text))
     if len(ids) != len(texts):
         print("Mismatch between number of IDs and texts after removing duplicates!")
         sys.exit(1)
-
     # Add to vector store in batches
     batch_size = 50
     total_inserted = 0
@@ -65,11 +65,13 @@ def ingest_direct(items: List[Dict[str, Any]]):
         batch_texts = texts[i:i+batch_size]
         batch_metadatas = metadatas[i:i+batch_size]
         batch_ids = ids[i:i+batch_size]
+        batch_dense = dense_embeddings[i:i+batch_size]
         batch_result = add_texts_to_collection(
             collection_name=HELP_COLLECTION,
             texts=batch_texts,
             metadatas=batch_metadatas,
-            ids=batch_ids
+            ids=batch_ids,
+            dense_embeddings=batch_dense
         )
         total_inserted += len(batch_result)
         print(f"Inserted batch {i//batch_size+1}: {len(batch_result)} documents")

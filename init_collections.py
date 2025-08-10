@@ -5,24 +5,18 @@ Helper script to initialize Milvus collections with langchain-milvus.
 
 import os
 import argparse
-from app.vectorstore import get_vectorstore, HELP_COLLECTION, SERVICES_COLLECTION
+from app.milvus_schema import init_hybrid_collection, HELP_COLLECTION, SERVICES_COLLECTION
 
 def init_collections(drop_old: bool = False):
-    """Initialize Milvus collections."""
-    print(f"Initializing Milvus collections (drop_old={drop_old})")
-    
-    # Initialize help_support collection
+    """Initialize Milvus collections with hybrid schema."""
+    print(f"Initializing Milvus hybrid collections (drop_old={drop_old})")
     print(f"Creating {HELP_COLLECTION} collection...")
-    vs_help = get_vectorstore(HELP_COLLECTION, drop_old=drop_old)
+    init_hybrid_collection(HELP_COLLECTION, dim_dense=384, drop_old=drop_old)
     print(f"  - Collection '{HELP_COLLECTION}' ready")
-    
-    # Initialize services collection
     print(f"Creating {SERVICES_COLLECTION} collection...")
-    vs_services = get_vectorstore(SERVICES_COLLECTION, drop_old=drop_old)
+    init_hybrid_collection(SERVICES_COLLECTION, dim_dense=384, drop_old=drop_old)
     print(f"  - Collection '{SERVICES_COLLECTION}' ready")
-    
     print("Initialization complete!")
-    return vs_help, vs_services
 
 def check_environment():
     """Check and print environment settings."""

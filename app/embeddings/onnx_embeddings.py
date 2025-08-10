@@ -77,6 +77,7 @@ class OnnxEmbeddings(Embeddings):
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         """Generate embeddings for a list of documents."""
         if not texts:
+            print("[DEBUG] No texts provided to embed_documents.")
             return []
 
         input_ids, attention_mask = self._tokenize(texts)
@@ -91,11 +92,17 @@ class OnnxEmbeddings(Embeddings):
             "token_type_ids": token_type_ids
         }
         outputs = self.session.run(None, ort_inputs)
-        last_hidden_states = outputs[0]  # [batch, seq_len, hidden_dim]
+        last_hidden_states = outputs[0] if outputs else None  # [batch, seq_len, hidden_dim]
+        if last_hidden_states is None:
+            print("[ERROR] ONNX model did not return outputs.")
+            return []
         embeddings = self._mean_pooling(last_hidden_states, attention_mask)
         normalized_embeddings = self._normalize(embeddings)
         return normalized_embeddings.astype(np.float32).tolist()
     
     def embed_query(self, text: str) -> List[float]:
         """Generate embedding for a single query."""
-        return self.embed_documents([text])[0]
+        embeddings = self.embed_documents([text])
+        if not embeddings or not embeddings[0]:
+            raise ValueError("Failed to generate embedding for query: '{}'".format(text))
+        return embeddings[0]

@@ -12,9 +12,10 @@ from app.schemas import (
 )
 from app.vectorstore import (
     add_texts_to_collection,
-    similarity_search_with_score,
+    hybrid_search,
     HELP_COLLECTION,
     SERVICES_COLLECTION,
+    get_embeddings
 )
 
 APP_NAME = os.getenv("APP_NAME", "semantic-search-milvus")
@@ -22,8 +23,46 @@ APP_NAME = os.getenv("APP_NAME", "semantic-search-milvus")
 app = FastAPI(
     title=APP_NAME,
     version="0.2.0",
-    description="FastAPI service providing semantic search over two Milvus collections using LangChain and Milvus.",
+    description="FastAPI service providing semantic search over two Milvus collections using LangChain and Milvus."
 )
+
+# Add CORS middleware for Swagger and cross-origin requests
+from fastapi.middleware.cors import CORSMiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.post("/hybrid_query", response_model=QueryResponse)
+def hybrid_query(req: QueryRequest):
+    if req.collection not in ("help_support", "services"):
+        raise HTTPException(status_code=400, detail="Invalid collection. Use 'help_support' or 'services'.")
+    try:
+        collection_name = HELP_COLLECTION if req.collection == "help_support" else SERVICES_COLLECTION
+        results = hybrid_search(
+            collection_name=collection_name,
+            query_text=req.query,
+            k=req.page_size,
+            filter=req.metadata_filter if req.metadata_filter else None
+        )
+        # Convert results to our response format
+        hits = []
+        print(f"Final results:: {results}")
+        for hit in results:
+            print(f"hit:: {hit}")
+            hits.append(Hit(**hit))
+        return QueryResponse(
+            collection=req.collection,
+            page=req.page,
+            page_size=req.page_size,
+            count=len(hits),
+            results=hits,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
 
 # CORS (adjust as needed)
 app.add_middleware(
@@ -40,61 +79,59 @@ def healthz():
 
 
 @app.post("/ingest/{collection}", response_model=dict)
+
+def ingest_help_support(items: List[Dict[str, Any]]) -> dict:
+    docs = [IngestHelpSupportItem(**it) for it in items]
+    texts = [f"{d.title}\n\n{d.content}" for d in docs]
+    metadatas = []
+    ids = []
+    for d in docs:
+        metadatas.append({
+            "url": d.url,
+            "title": d.title,
+            "content": d.content,
+            "tags": ",".join(d.tags or []),
+        })
+        ids.append(d.id)
+    add_texts_to_collection(
+        collection_name=HELP_COLLECTION,
+        texts=texts,
+        metadatas=metadatas,
+        ids=ids
+    )
+    return {"ingested": len(texts), "collection": HELP_COLLECTION}
+
+def ingest_services(items: List[Dict[str, Any]]) -> dict:
+    docs = [IngestServicesItem(**it) for it in items]
+    texts = [f"{d.name}\n{d.description}\n{d.intent_entity}" for d in docs]
+    metadatas = []
+    ids = []
+    for d in docs:
+        metadatas.append({
+            "url": d.url,
+            "name": d.name,
+            "description": d.description,
+            "intent_entity": d.intent_entity,
+        })
+        ids.append(d.service_id)
+    add_texts_to_collection(
+        collection_name=SERVICES_COLLECTION,
+        texts=texts,
+        metadatas=metadatas,
+        ids=ids
+    )
+    return {"ingested": len(texts), "collection": SERVICES_COLLECTION}
+
+@app.post("/ingest/{collection}", response_model=dict)
 def ingest(
     collection: Literal["help_support", "services"] = Path(..., description="Target collection type"),
     items: List[Dict[str, Any]] = Body(..., description="List of items to ingest, schema depends on collection type"),
 ):
     try:
         if collection == "help_support":
-            docs = [IngestHelpSupportItem(**it) for it in items]
-            texts = [f"{d.title}\n\n{d.content}" for d in docs]
-            
-            # Prepare metadata
-            metadatas = []
-            ids = []
-            for d in docs:
-                metadatas.append({
-                    "url": d.url,
-                    "title": d.title,
-                    "content": d.content,
-                    "tags": ",".join(d.tags or []),
-                })
-                ids.append(d.id)
-                
-            # Add to Milvus via LangChain
-            add_texts_to_collection(
-                collection_name=HELP_COLLECTION,
-                texts=texts,
-                metadatas=metadatas,
-                ids=ids
-            )
-            
-            return {"ingested": len(texts), "collection": HELP_COLLECTION}
+            return ingest_help_support(items)
         else:
-            docs = [IngestServicesItem(**it) for it in items]
-            texts = [f"{d.name}\n{d.description}\n{d.intent_entity}" for d in docs]
-            
-            # Prepare metadata
-            metadatas = []
-            ids = []
-            for d in docs:
-                metadatas.append({
-                    "url": d.url,
-                    "name": d.name,
-                    "description": d.description,
-                    "intent_entity": d.intent_entity,
-                })
-                ids.append(d.service_id)
-                
-            # Add to Milvus via LangChain
-            add_texts_to_collection(
-                collection_name=SERVICES_COLLECTION,
-                texts=texts,
-                metadatas=metadatas,
-                ids=ids
-            )
-            
-            return {"ingested": len(texts), "collection": SERVICES_COLLECTION}
+            return ingest_services(items)
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
@@ -106,18 +143,17 @@ def query(req: QueryRequest):
     try:
         collection_name = HELP_COLLECTION if req.collection == "help_support" else SERVICES_COLLECTION
         
-        # Use LangChain for similarity search
         if req.metadata_filter:
-            docs_and_scores = similarity_search_with_score(
+            docs_and_scores = hybrid_search(
                 collection_name=collection_name,
-                query=req.query,
+                query_text=req.query,
                 k=req.page_size,
                 filter=req.metadata_filter
             )
         else:
-            docs_and_scores = similarity_search_with_score(
+            docs_and_scores = hybrid_search(
                 collection_name=collection_name,
-                query=req.query,
+                query_text=req.query,
                 k=req.page_size
             )
         
