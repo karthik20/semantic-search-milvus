@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: semantic-search
+  namespace: semantic-search
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+    - host: semantic-search.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: semantic-search-app
+                port:
+                  number: 80

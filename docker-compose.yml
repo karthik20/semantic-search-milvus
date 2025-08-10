@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  milvus-standalone:
+    image: milvusdb/milvus:2.4.7
+    container_name: milvus-standalone
+    environment:
+      - MILVUS_DEPLOY_MODE=standalone
+    ports:
+      - "19530:19530"   # Milvus
+      - "9091:9091"     # Metrics/monitoring
+    volumes:
+      - milvus_data:/var/lib/milvus
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/metrics"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  app:
+    build: .
+    container_name: semantic-search-app
+    depends_on:
+      - milvus-standalone
+    environment:
+      - MILVUS_HOST=milvus-standalone
+      - MILVUS_PORT=19530
+      - MODEL_DIR=/models/all-MiniLM-L6-v2-onnx
+      - EMBEDDING_DIM=384
+      - INDEX_TYPE=IVF_FLAT
+      - METRIC_TYPE=L2
+      - ORT_PROVIDER=AUTO # AUTO uses CUDA if available in container, else CPU
+    volumes:
+      - ./models/all-MiniLM-L6-v2-onnx:/models/all-MiniLM-L6-v2-onnx:ro
+    ports:
+      - "8000:8000"
+    # To enable GPU (NVIDIA) for embeddings, uncomment below and ensure host has nvidia-container-toolkit
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  milvus_data:
