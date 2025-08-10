@@ -86,6 +86,7 @@ Thumbs.db
 
 # Project specific
 models/
-data/
+data/*
+!data/*sample*.json
 *.log
 milvus_data/

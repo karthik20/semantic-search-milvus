@@ -1,0 +1,37 @@
+[
+  {
+    "id": "help-001",
+    "url": "https://example.com/help/account-opening",
+    "title": "How to Open a Savings Account",
+    "content": "Step-by-step guide to opening a new savings account. Visit our branch or apply online through our secure portal. You'll need a valid ID, proof of address, and initial deposit.",
+    "tags": ["account", "savings", "banking", "guide"]
+  },
+  {
+    "id": "help-002", 
+    "url": "https://example.com/help/mobile-banking",
+    "title": "Mobile Banking Setup",
+    "content": "Download our mobile app and set up secure access to your accounts. Enable biometric login and manage your finances on the go with real-time notifications.",
+    "tags": ["mobile", "app", "security", "digital"]
+  },
+  {
+    "id": "help-003",
+    "url": "https://example.com/help/loan-application",
+    "title": "Personal Loan Application Process",
+    "content": "Apply for a personal loan with competitive rates. Check your credit score, submit required documents, and get approval within 24 hours.",
+    "tags": ["loan", "credit", "application", "personal"]
+  },
+  {
+    "id": "help-004",
+    "url": "https://example.com/help/credit-card",
+    "title": "Credit Card Benefits and Features",
+    "content": "Explore our range of credit cards with cashback rewards, travel benefits, and fraud protection. Compare features and apply for the card that suits your lifestyle.",
+    "tags": ["credit-card", "rewards", "benefits", "travel"]
+  },
+  {
+    "id": "help-005",
+    "url": "https://example.com/help/investment",
+    "title": "Investment Planning Services",
+    "content": "Start your investment journey with our expert financial advisors. Diversify your portfolio with mutual funds, bonds, and retirement planning options.",
+    "tags": ["investment", "portfolio", "retirement", "advisor"]
+  }
+]
