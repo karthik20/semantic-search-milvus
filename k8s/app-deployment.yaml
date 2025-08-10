@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: semantic-search-app
+  namespace: semantic-search
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: semantic-search-app
+  template:
+    metadata:
+      labels:
+        app: semantic-search-app
+    spec:
+      containers:
+        - name: app
+          image: ghcr.io/your-org/semantic-search-milvus:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: MILVUS_HOST
+              value: milvus.semantic-search.svc.cluster.local
+            - name: MILVUS_PORT
+              value: "19530"
+            - name: MODEL_DIR
+              value: /models/all-MiniLM-L6-v2-onnx
+            - name: EMBEDDING_DIM
+              value: "384"
+            - name: INDEX_TYPE
+              value: "IVF_FLAT"
+            - name: METRIC_TYPE
+              value: "L2"
+            - name: ORT_PROVIDER
+              value: "AUTO"
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: model-volume
+              mountPath: /models/all-MiniLM-L6-v2-onnx
+              readOnly: true
+      volumes:
+        # Provide model via ConfigMap, CSI driver, or emptyDir + initContainer that downloads the model
+        - name: model-volume
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: semantic-search-app
+  namespace: semantic-search
+spec:
+  selector:
+    app: semantic-search-app
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8000
+  type: ClusterIP

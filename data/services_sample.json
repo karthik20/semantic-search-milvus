@@ -1,0 +1,51 @@
+[
+  {
+    "service_id": "svc-001",
+    "url": "https://example.com/services/savings-account",
+    "name": "High-Yield Savings Account",
+    "description": "Earn competitive interest rates with our high-yield savings account. No minimum balance and unlimited online transfers.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-002",
+    "url": "https://example.com/services/checking-account",
+    "name": "Premium Checking Account",
+    "description": "Feature-rich checking account with no monthly fees, free ATM access worldwide, and overdraft protection.",
+    "intent_entity": "account_opening-checking"
+  },
+  {
+    "service_id": "svc-003",
+    "url": "https://example.com/services/personal-loan",
+    "name": "Personal Loan",
+    "description": "Quick approval personal loans with flexible terms and competitive rates. Use for debt consolidation, home improvement, or major purchases.",
+    "intent_entity": "loan_application-personal"
+  },
+  {
+    "service_id": "svc-004",
+    "url": "https://example.com/services/mortgage",
+    "name": "Home Mortgage",
+    "description": "Fixed and adjustable rate mortgages for home purchases and refinancing. Expert guidance through the entire process.",
+    "intent_entity": "loan_application-mortgage"
+  },
+  {
+    "service_id": "svc-005",
+    "url": "https://example.com/services/credit-card",
+    "name": "Rewards Credit Card",
+    "description": "Earn cashback on everyday purchases with our rewards credit card. Travel benefits and purchase protection included.",
+    "intent_entity": "credit_card-rewards"
+  },
+  {
+    "service_id": "svc-006",
+    "url": "https://example.com/services/investment",
+    "name": "Investment Management",
+    "description": "Professional investment management services with personalized portfolio strategies and retirement planning.",
+    "intent_entity": "investment-management"
+  },
+  {
+    "service_id": "svc-007",
+    "url": "https://example.com/services/mobile-banking",
+    "name": "Mobile Banking App",
+    "description": "Full-featured mobile banking with bill pay, mobile check deposit, and account alerts. Available for iOS and Android.",
+    "intent_entity": "digital_banking-mobile"
+  }
+]
