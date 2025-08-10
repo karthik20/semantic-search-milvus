@@ -1,0 +1,737 @@
+[
+  {
+    "service_id": "svc-001",
+    "url": "https://bank.example.com/accounts/savings",
+    "name": "Premium Savings Account",
+    "description": "Our Premium Savings Account offers competitive interest rates that grow with your balance. Enjoy no monthly fees with a minimum balance of $1,500, free online and mobile banking, and unlimited deposits. Perfect for building your emergency fund or saving for future goals.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-002",
+    "url": "https://bank.example.com/accounts/checking",
+    "name": "Everyday Checking Account",
+    "description": "Our Everyday Checking Account provides all the essentials with no minimum balance requirements. Features include a free debit card, access to over 40,000 ATMs nationwide, mobile check deposits, and bill pay services. Direct deposit available for faster access to your funds.",
+    "intent_entity": "account_opening-checking"
+  },
+  {
+    "service_id": "svc-003",
+    "url": "https://bank.example.com/cards/credit/rewards",
+    "name": "Cash Rewards Credit Card",
+    "description": "Earn unlimited 1.5% cash back on all purchases with our Cash Rewards Credit Card. No annual fee, 0% intro APR on purchases and balance transfers for 15 months, and enhanced security features including instant purchase alerts and card lock/unlock from your mobile app.",
+    "intent_entity": "card_application-credit"
+  },
+  {
+    "service_id": "svc-004",
+    "url": "https://bank.example.com/loans/personal",
+    "name": "Personal Loan",
+    "description": "Our Personal Loans offer flexible financing for major expenses, debt consolidation, or unexpected costs. Competitive fixed rates starting at 5.99% APR, loan amounts from $2,000 to $50,000, and repayment terms from 12 to 60 months. No collateral required and no prepayment penalties.",
+    "intent_entity": "loan_application-personal"
+  },
+  {
+    "service_id": "svc-005",
+    "url": "https://bank.example.com/loans/mortgage",
+    "name": "Fixed-Rate Mortgage",
+    "description": "Lock in a competitive rate for the life of your loan with our Fixed-Rate Mortgage. Available in 15, 20, and 30-year terms with as little as 3% down payment for qualified buyers. Our streamlined application process and dedicated mortgage consultants help make homeownership achievable.",
+    "intent_entity": "loan_application-mortgage"
+  },
+  {
+    "service_id": "svc-555",
+    "url": "https://bank.example.com/investments/401(k)-rollover",
+    "name": "Ultimate 401(k) Rollover",
+    "description": "Our Ultimate 401(k) Rollover helps you build wealth with instant notifications, automatic transfers. Designed to simplify your banking experience.",
+    "intent_entity": "investment_opening-401(k)_rollover"
+  },
+  {
+    "service_id": "svc-930",
+    "url": "https://bank.example.com/investments/managed-portfolio",
+    "name": "Premier Managed Portfolio",
+    "description": "Start investing with as little as $500 with our Premier Managed Portfolio. high-yield interest rates, monthly statements. Grow your wealth effortlessly.",
+    "intent_entity": "investment_opening-managed_portfolio"
+  },
+  {
+    "service_id": "svc-646",
+    "url": "https://bank.example.com/accounts/student-account",
+    "name": "Advantage Student Account",
+    "description": "Advantage Student Account - our most popular account option with direct deposit, round-up savings. Save time and money.",
+    "intent_entity": "account_opening-student_account"
+  },
+  {
+    "service_id": "svc-035",
+    "url": "https://bank.example.com/accounts/money-market",
+    "name": "Advantage Money Market",
+    "description": "Earn 1.18% APY on balances with our Advantage Money Market. no foreign transaction fees, round-up savings. Trusted by millions of customers.",
+    "intent_entity": "account_opening-money_market"
+  },
+  {
+    "service_id": "svc-374",
+    "url": "https://bank.example.com/investments/robo-advisor",
+    "name": "Basic Robo-Advisor",
+    "description": "Basic Robo-Advisor - diversify your portfolio with free money transfers, no monthly maintenance fees. Designed to simplify your banking experience.",
+    "intent_entity": "investment_opening-robo-advisor"
+  },
+  {
+    "service_id": "svc-079",
+    "url": "https://bank.example.com/accounts/certificate-of-deposit",
+    "name": "Preferred Certificate of Deposit",
+    "description": "The Preferred Certificate of Deposit is designed for seniors. budgeting assistance, free money transfers. Rated #1 in customer satisfaction.",
+    "intent_entity": "account_opening-certificate_of_deposit"
+  },
+  {
+    "service_id": "svc-525",
+    "url": "https://bank.example.com/accounts/business-checking",
+    "name": "Premier Business Checking",
+    "description": "The Premier Business Checking is designed for investors. direct deposit, ATM fee reimbursements. Enjoy peace of mind.",
+    "intent_entity": "account_opening-business_checking"
+  },
+  {
+    "service_id": "svc-343",
+    "url": "https://bank.example.com/investments/brokerage-account",
+    "name": "Ultimate Brokerage Account",
+    "description": "The Ultimate Brokerage Account offers direct deposit, budgeting assistance with professional management. Take control of your finances.",
+    "intent_entity": "investment_opening-brokerage_account"
+  },
+  {
+    "service_id": "svc-233",
+    "url": "https://bank.example.com/investments/college-savings-plan",
+    "name": "Signature College Savings Plan",
+    "description": "Start investing with as little as $1000 with our Signature College Savings Plan. instant notifications, direct deposit. Rated #1 in customer satisfaction.",
+    "intent_entity": "investment_opening-college_savings_plan"
+  },
+  {
+    "service_id": "svc-054",
+    "url": "https://bank.example.com/accounts/high-yield-savings",
+    "name": "Premium High-Yield Savings",
+    "description": "Earn 2.12% APY on balances with our Premium High-Yield Savings. free bill pay, budgeting assistance. Take control of your finances.",
+    "intent_entity": "account_opening-high-yield_savings"
+  },
+  {
+    "service_id": "svc-794",
+    "url": "https://bank.example.com/investments/college-savings-plan",
+    "name": "Select College Savings Plan",
+    "description": "Select College Savings Plan - diversify your portfolio with free money transfers, automatic transfers. Backed by our satisfaction guarantee.",
+    "intent_entity": "investment_opening-college_savings_plan"
+  },
+  {
+    "service_id": "svc-438",
+    "url": "https://bank.example.com/cards/business-credit-card",
+    "name": "Standard Business Credit Card",
+    "description": "Our Standard Business Credit Card offers 1.3% cash back on all purchases. free money transfers, instant notifications. Designed to simplify your banking experience.",
+    "intent_entity": "card_application-business_credit_card"
+  },
+  {
+    "service_id": "svc-463",
+    "url": "https://bank.example.com/insurance/travel-insurance",
+    "name": "Advantage Travel Insurance",
+    "description": "Our Advantage Travel Insurance offers comprehensive coverage with zero liability protection, round-up savings. Supported by award-winning customer service.",
+    "intent_entity": "insurance_quote-travel_insurance"
+  },
+  {
+    "service_id": "svc-723",
+    "url": "https://bank.example.com/accounts/certificate-of-deposit",
+    "name": "Preferred Certificate of Deposit",
+    "description": "Our Preferred Certificate of Deposit offers customizable alerts, round-up savings with no minimum balance requirement. Stay protected against fraud.",
+    "intent_entity": "account_opening-certificate_of_deposit"
+  },
+  {
+    "service_id": "svc-955",
+    "url": "https://bank.example.com/loans/auto-loan",
+    "name": "Select Auto Loan",
+    "description": "The Select Auto Loan provides funds from $100 to $50000. 24/7 online access, budgeting assistance. Access your money anywhere, anytime.",
+    "intent_entity": "loan_application-auto_loan"
+  },
+  {
+    "service_id": "svc-778",
+    "url": "https://bank.example.com/accounts/savings",
+    "name": "Basic Savings",
+    "description": "Basic Savings - our most popular account option with automatic transfers, round-up savings. Save time and money.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-665",
+    "url": "https://bank.example.com/accounts/savings",
+    "name": "Premium Savings",
+    "description": "Earn 1.57% APY on balances with our Premium Savings. monthly statements, free money transfers. Bank on your terms.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-124",
+    "url": "https://bank.example.com/accounts/senior-account",
+    "name": "Premium Senior Account",
+    "description": "Our Premium Senior Account offers 24/7 online access, overdraft protection with no minimum balance requirement. Achieve your financial goals faster.",
+    "intent_entity": "account_opening-senior_account"
+  },
+  {
+    "service_id": "svc-833",
+    "url": "https://bank.example.com/investments/brokerage-account",
+    "name": "Standard Brokerage Account",
+    "description": "Start investing with as little as $250 with our Standard Brokerage Account. monthly statements, ATM fee reimbursements. Stay protected against fraud.",
+    "intent_entity": "investment_opening-brokerage_account"
+  },
+  {
+    "service_id": "svc-273",
+    "url": "https://bank.example.com/insurance/auto-insurance",
+    "name": "Ultimate Auto Insurance",
+    "description": "Our Ultimate Auto Insurance offers comprehensive coverage with fraud monitoring, round-up savings. Backed by our satisfaction guarantee.",
+    "intent_entity": "insurance_quote-auto_insurance"
+  },
+  {
+    "service_id": "svc-039",
+    "url": "https://bank.example.com/loans/personal-loan",
+    "name": "Preferred Personal Loan",
+    "description": "Get approved for a Preferred Personal Loan with flexible terms from 2 to 15 years. zero liability protection, instant notifications. Rated #1 in customer satisfaction.",
+    "intent_entity": "loan_application-personal_loan"
+  },
+  {
+    "service_id": "svc-684",
+    "url": "https://bank.example.com/cards/secured-credit-card",
+    "name": "Advantage Secured Credit Card",
+    "description": "Earn 4.3X points on travel with the Advantage Secured Credit Card. direct deposit, fraud monitoring. Achieve your financial goals faster.",
+    "intent_entity": "card_application-secured_credit_card"
+  },
+  {
+    "service_id": "svc-054",
+    "url": "https://bank.example.com/cards/business-credit-card",
+    "name": "Signature Business Credit Card",
+    "description": "The Signature Business Credit Card has no annual fee and ATM fee reimbursements, automatic transfers. Perfect for first-time homebuyers. Designed to simplify your banking experience.",
+    "intent_entity": "card_application-business_credit_card"
+  },
+  {
+    "service_id": "svc-183",
+    "url": "https://bank.example.com/insurance/life-insurance",
+    "name": "Premium Life Insurance",
+    "description": "Get peace of mind with Premium Life Insurance, providing customizable alerts, free money transfers. Perfect for busy lifestyles.",
+    "intent_entity": "insurance_quote-life_insurance"
+  },
+  {
+    "service_id": "svc-491",
+    "url": "https://bank.example.com/investments/ira",
+    "name": "Priority IRA",
+    "description": "Start investing with as little as $100 with our Priority IRA. no monthly maintenance fees, overdraft protection. Grow your wealth effortlessly.",
+    "intent_entity": "investment_opening-ira"
+  },
+  {
+    "service_id": "svc-085",
+    "url": "https://bank.example.com/accounts/money-market",
+    "name": "Elite Money Market",
+    "description": "Our Elite Money Market offers 24/7 online access, no monthly maintenance fees with no minimum balance requirement. Perfect for busy lifestyles.",
+    "intent_entity": "account_opening-money_market"
+  },
+  {
+    "service_id": "svc-308",
+    "url": "https://bank.example.com/insurance/life-insurance",
+    "name": "Advantage Life Insurance",
+    "description": "Our Advantage Life Insurance offers comprehensive coverage with monthly statements, direct deposit. Rated #1 in customer satisfaction.",
+    "intent_entity": "insurance_quote-life_insurance"
+  },
+  {
+    "service_id": "svc-534",
+    "url": "https://bank.example.com/insurance/home-insurance",
+    "name": "Elite Home Insurance",
+    "description": "Elite Home Insurance - affordable premiums and account insights, mobile banking support. Supported by award-winning customer service.",
+    "intent_entity": "insurance_quote-home_insurance"
+  },
+  {
+    "service_id": "svc-497",
+    "url": "https://bank.example.com/cards/cash-back-card",
+    "name": "Advantage Cash Back Card",
+    "description": "Our Advantage Cash Back Card offers 4.0% miles on all purchases. ATM fee reimbursements, round-up savings. Achieve your financial goals faster.",
+    "intent_entity": "card_application-cash_back_card"
+  },
+  {
+    "service_id": "svc-365",
+    "url": "https://bank.example.com/cards/credit-card",
+    "name": "Elite Credit Card",
+    "description": "The Elite Credit Card has no annual fee and round-up savings, no foreign transaction fees. Perfect for investors. Rated #1 in customer satisfaction.",
+    "intent_entity": "card_application-credit_card"
+  },
+  {
+    "service_id": "svc-899",
+    "url": "https://bank.example.com/cards/travel-card",
+    "name": "Essential Travel Card",
+    "description": "Our Essential Travel Card offers 1.2% rewards on all purchases. high-yield interest rates, instant notifications. Access your money anywhere, anytime.",
+    "intent_entity": "card_application-travel_card"
+  },
+  {
+    "service_id": "svc-117",
+    "url": "https://bank.example.com/accounts/high-yield-savings",
+    "name": "Advantage High-Yield Savings",
+    "description": "The Advantage High-Yield Savings is designed for travelers. round-up savings, zero liability protection. Trusted by millions of customers.",
+    "intent_entity": "account_opening-high-yield_savings"
+  },
+  {
+    "service_id": "svc-067",
+    "url": "https://bank.example.com/insurance/life-insurance",
+    "name": "Essential Life Insurance",
+    "description": "Essential Life Insurance - affordable premiums and high-yield interest rates, budgeting assistance. Rated #1 in customer satisfaction.",
+    "intent_entity": "insurance_quote-life_insurance"
+  },
+  {
+    "service_id": "svc-567",
+    "url": "https://bank.example.com/accounts/senior-account",
+    "name": "Signature Senior Account",
+    "description": "Our Signature Senior Account offers mobile banking support, direct deposit with no minimum balance requirement. Bank on your terms.",
+    "intent_entity": "account_opening-senior_account"
+  },
+  {
+    "service_id": "svc-613",
+    "url": "https://bank.example.com/insurance/home-insurance",
+    "name": "Standard Home Insurance",
+    "description": "Our Standard Home Insurance offers comprehensive coverage with round-up savings, monthly statements. Save time and money.",
+    "intent_entity": "insurance_quote-home_insurance"
+  },
+  {
+    "service_id": "svc-790",
+    "url": "https://bank.example.com/insurance/pet-insurance",
+    "name": "Preferred Pet Insurance",
+    "description": "Our Preferred Pet Insurance offers comprehensive coverage with no monthly maintenance fees, high-yield interest rates. Stay protected against fraud.",
+    "intent_entity": "insurance_quote-pet_insurance"
+  },
+  {
+    "service_id": "svc-049",
+    "url": "https://bank.example.com/cards/secured-credit-card",
+    "name": "Premium Secured Credit Card",
+    "description": "Earn 3.5X points on gas with the Premium Secured Credit Card. monthly statements, mobile banking support. Achieve your financial goals faster.",
+    "intent_entity": "card_application-secured_credit_card"
+  },
+  {
+    "service_id": "svc-415",
+    "url": "https://bank.example.com/accounts/certificate-of-deposit",
+    "name": "Premier Certificate of Deposit",
+    "description": "Earn 3.16% APY on balances with our Premier Certificate of Deposit. direct deposit, account insights. Take control of your finances.",
+    "intent_entity": "account_opening-certificate_of_deposit"
+  },
+  {
+    "service_id": "svc-102",
+    "url": "https://bank.example.com/loans/home-equity-loan",
+    "name": "Signature Home Equity Loan",
+    "description": "Signature Home Equity Loan - fast approval and overdraft protection, customizable alerts. Enjoy peace of mind.",
+    "intent_entity": "loan_application-home_equity_loan"
+  },
+  {
+    "service_id": "svc-125",
+    "url": "https://bank.example.com/investments/robo-advisor",
+    "name": "Ultimate Robo-Advisor",
+    "description": "Ultimate Robo-Advisor - diversify your portfolio with round-up savings, free money transfers. Enjoy peace of mind.",
+    "intent_entity": "investment_opening-robo-advisor"
+  },
+  {
+    "service_id": "svc-671",
+    "url": "https://bank.example.com/accounts/savings",
+    "name": "Preferred Savings",
+    "description": "Preferred Savings - our most popular account option with instant notifications, budgeting assistance. Backed by our satisfaction guarantee.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-009",
+    "url": "https://bank.example.com/investments/managed-portfolio",
+    "name": "Advantage Managed Portfolio",
+    "description": "The Advantage Managed Portfolio offers financial planning tools, overdraft protection with professional management. Enjoy peace of mind.",
+    "intent_entity": "investment_opening-managed_portfolio"
+  },
+  {
+    "service_id": "svc-544",
+    "url": "https://bank.example.com/loans/mortgage",
+    "name": "Basic Mortgage",
+    "description": "Get approved for a Basic Mortgage with flexible terms from 2 to 20 years. 24/7 online access, fraud monitoring. Perfect for busy lifestyles.",
+    "intent_entity": "loan_application-mortgage"
+  },
+  {
+    "service_id": "svc-288",
+    "url": "https://bank.example.com/cards/student-card",
+    "name": "Standard Student Card",
+    "description": "Our Standard Student Card offers 3.3% cash back on all purchases. zero liability protection, overdraft protection. Supported by award-winning customer service.",
+    "intent_entity": "card_application-student_card"
+  },
+  {
+    "service_id": "svc-447",
+    "url": "https://bank.example.com/accounts/business-savings",
+    "name": "Preferred Business Savings",
+    "description": "The Preferred Business Savings is designed for travelers. free money transfers, high-yield interest rates. Backed by our satisfaction guarantee.",
+    "intent_entity": "account_opening-business_savings"
+  },
+  {
+    "service_id": "svc-558",
+    "url": "https://bank.example.com/loans/mortgage",
+    "name": "Basic Mortgage",
+    "description": "The Basic Mortgage provides funds from $2500 to $25000. budgeting assistance, free money transfers. Stay protected against fraud.",
+    "intent_entity": "loan_application-mortgage"
+  },
+  {
+    "service_id": "svc-282",
+    "url": "https://bank.example.com/loans/student-loan",
+    "name": "Premier Student Loan",
+    "description": "Premier Student Loan - fast approval and overdraft protection, no monthly maintenance fees. Stay protected against fraud.",
+    "intent_entity": "loan_application-student_loan"
+  },
+  {
+    "service_id": "svc-393",
+    "url": "https://bank.example.com/accounts/senior-account",
+    "name": "Standard Senior Account",
+    "description": "Standard Senior Account - our most popular account option with no foreign transaction fees, 24/7 online access. Achieve your financial goals faster.",
+    "intent_entity": "account_opening-senior_account"
+  },
+  {
+    "service_id": "svc-239",
+    "url": "https://bank.example.com/investments/robo-advisor",
+    "name": "Basic Robo-Advisor",
+    "description": "Our Basic Robo-Advisor helps you build wealth with no foreign transaction fees, account insights. Backed by our satisfaction guarantee.",
+    "intent_entity": "investment_opening-robo-advisor"
+  },
+  {
+    "service_id": "svc-018",
+    "url": "https://bank.example.com/accounts/senior-account",
+    "name": "Basic Senior Account",
+    "description": "Our Basic Senior Account offers customizable alerts, budgeting assistance with no minimum balance requirement. Access your money anywhere, anytime.",
+    "intent_entity": "account_opening-senior_account"
+  },
+  {
+    "service_id": "svc-900",
+    "url": "https://bank.example.com/insurance/travel-insurance",
+    "name": "Premier Travel Insurance",
+    "description": "Protect what matters with our Premier Travel Insurance. customizable alerts, account insights. Trusted by millions of customers.",
+    "intent_entity": "insurance_quote-travel_insurance"
+  },
+  {
+    "service_id": "svc-763",
+    "url": "https://bank.example.com/insurance/business-insurance",
+    "name": "Preferred Business Insurance",
+    "description": "Get peace of mind with Preferred Business Insurance, providing free bill pay, monthly statements. Perfect for busy lifestyles.",
+    "intent_entity": "insurance_quote-business_insurance"
+  },
+  {
+    "service_id": "svc-765",
+    "url": "https://bank.example.com/accounts/certificate-of-deposit",
+    "name": "Basic Certificate of Deposit",
+    "description": "Basic Certificate of Deposit - our most popular account option with zero liability protection, ATM fee reimbursements. Rated #1 in customer satisfaction.",
+    "intent_entity": "account_opening-certificate_of_deposit"
+  },
+  {
+    "service_id": "svc-003",
+    "url": "https://bank.example.com/investments/401(k)-rollover",
+    "name": "Preferred 401(k) Rollover",
+    "description": "Start investing with as little as $100 with our Preferred 401(k) Rollover. financial planning tools, mobile banking support. Perfect for busy lifestyles.",
+    "intent_entity": "investment_opening-401(k)_rollover"
+  },
+  {
+    "service_id": "svc-540",
+    "url": "https://bank.example.com/loans/debt-consolidation-loan",
+    "name": "Elite Debt Consolidation Loan",
+    "description": "Get approved for a Elite Debt Consolidation Loan with flexible terms from 2 to 15 years. account insights, free money transfers. Take control of your finances.",
+    "intent_entity": "loan_application-debt_consolidation_loan"
+  },
+  {
+    "service_id": "svc-947",
+    "url": "https://bank.example.com/cards/rewards-card",
+    "name": "Priority Rewards Card",
+    "description": "Earn 1.2X points on travel with the Priority Rewards Card. 24/7 online access, high-yield interest rates. Achieve your financial goals faster.",
+    "intent_entity": "card_application-rewards_card"
+  },
+  {
+    "service_id": "svc-961",
+    "url": "https://bank.example.com/insurance/pet-insurance",
+    "name": "Essential Pet Insurance",
+    "description": "Our Essential Pet Insurance offers comprehensive coverage with free bill pay, budgeting assistance. Enjoy peace of mind.",
+    "intent_entity": "insurance_quote-pet_insurance"
+  },
+  {
+    "service_id": "svc-535",
+    "url": "https://bank.example.com/insurance/travel-insurance",
+    "name": "Premier Travel Insurance",
+    "description": "Our Premier Travel Insurance offers comprehensive coverage with zero liability protection, no foreign transaction fees. Designed to simplify your banking experience.",
+    "intent_entity": "insurance_quote-travel_insurance"
+  },
+  {
+    "service_id": "svc-810",
+    "url": "https://bank.example.com/loans/personal-loan",
+    "name": "Essential Personal Loan",
+    "description": "Essential Personal Loan - fast approval and no foreign transaction fees, free bill pay. Designed to simplify your banking experience.",
+    "intent_entity": "loan_application-personal_loan"
+  },
+  {
+    "service_id": "svc-819",
+    "url": "https://bank.example.com/cards/prepaid-card",
+    "name": "Elite Prepaid Card",
+    "description": "The Elite Prepaid Card has no annual fee and 24/7 online access, mobile banking support. Perfect for young professionals. Designed to simplify your banking experience.",
+    "intent_entity": "card_application-prepaid_card"
+  },
+  {
+    "service_id": "svc-571",
+    "url": "https://bank.example.com/loans/student-loan",
+    "name": "Standard Student Loan",
+    "description": "The Standard Student Loan provides funds from $2500 to $10000. account insights, financial planning tools. Grow your wealth effortlessly.",
+    "intent_entity": "loan_application-student_loan"
+  },
+  {
+    "service_id": "svc-992",
+    "url": "https://bank.example.com/investments/college-savings-plan",
+    "name": "Select College Savings Plan",
+    "description": "Start investing with as little as $1000 with our Select College Savings Plan. mobile banking support, free money transfers. Perfect for busy lifestyles.",
+    "intent_entity": "investment_opening-college_savings_plan"
+  },
+  {
+    "service_id": "svc-428",
+    "url": "https://bank.example.com/investments/brokerage-account",
+    "name": "Essential Brokerage Account",
+    "description": "Our Essential Brokerage Account helps you build wealth with free money transfers, free bill pay. Stay protected against fraud.",
+    "intent_entity": "investment_opening-brokerage_account"
+  },
+  {
+    "service_id": "svc-121",
+    "url": "https://bank.example.com/insurance/pet-insurance",
+    "name": "Signature Pet Insurance",
+    "description": "Get peace of mind with Signature Pet Insurance, providing monthly statements, financial planning tools. Backed by our satisfaction guarantee.",
+    "intent_entity": "insurance_quote-pet_insurance"
+  },
+  {
+    "service_id": "svc-483",
+    "url": "https://bank.example.com/loans/home-equity-loan",
+    "name": "Elite Home Equity Loan",
+    "description": "Our Elite Home Equity Loan offers competitive rates starting at 13.99% APR. zero liability protection, ATM fee reimbursements. Trusted by millions of customers.",
+    "intent_entity": "loan_application-home_equity_loan"
+  },
+  {
+    "service_id": "svc-602",
+    "url": "https://bank.example.com/accounts/checking",
+    "name": "Standard Checking",
+    "description": "The Standard Checking is designed for first-time homebuyers. budgeting assistance, automatic transfers. Rated #1 in customer satisfaction.",
+    "intent_entity": "account_opening-checking"
+  },
+  {
+    "service_id": "svc-948",
+    "url": "https://bank.example.com/insurance/health-insurance",
+    "name": "Signature Health Insurance",
+    "description": "Signature Health Insurance - affordable premiums and 24/7 online access, instant notifications. Rated #1 in customer satisfaction.",
+    "intent_entity": "insurance_quote-health_insurance"
+  },
+  {
+    "service_id": "svc-748",
+    "url": "https://bank.example.com/loans/student-loan",
+    "name": "Premium Student Loan",
+    "description": "The Premium Student Loan provides funds from $100 to $25000. overdraft protection, 24/7 online access. Designed to simplify your banking experience.",
+    "intent_entity": "loan_application-student_loan"
+  },
+  {
+    "service_id": "svc-276",
+    "url": "https://bank.example.com/loans/line-of-credit",
+    "name": "Essential Line of Credit",
+    "description": "The Essential Line of Credit provides funds from $250 to $100000. high-yield interest rates, mobile banking support. Grow your wealth effortlessly.",
+    "intent_entity": "loan_application-line_of_credit"
+  },
+  {
+    "service_id": "svc-022",
+    "url": "https://bank.example.com/cards/prepaid-card",
+    "name": "Basic Prepaid Card",
+    "description": "Basic Prepaid Card - designed with young professionals in mind, offering budgeting assistance, no monthly maintenance fees. Rated #1 in customer satisfaction.",
+    "intent_entity": "card_application-prepaid_card"
+  },
+  {
+    "service_id": "svc-330",
+    "url": "https://bank.example.com/investments/robo-advisor",
+    "name": "Essential Robo-Advisor",
+    "description": "Essential Robo-Advisor - diversify your portfolio with overdraft protection, free bill pay. Enjoy peace of mind.",
+    "intent_entity": "investment_opening-robo-advisor"
+  },
+  {
+    "service_id": "svc-452",
+    "url": "https://bank.example.com/cards/debit-card",
+    "name": "Signature Debit Card",
+    "description": "The Signature Debit Card has no annual fee and mobile banking support, fraud monitoring. Perfect for business owners. Achieve your financial goals faster.",
+    "intent_entity": "card_application-debit_card"
+  },
+  {
+    "service_id": "svc-909",
+    "url": "https://bank.example.com/insurance/business-insurance",
+    "name": "Essential Business Insurance",
+    "description": "Essential Business Insurance - affordable premiums and financial planning tools, instant notifications. Bank on your terms.",
+    "intent_entity": "insurance_quote-business_insurance"
+  },
+  {
+    "service_id": "svc-758",
+    "url": "https://bank.example.com/cards/travel-card",
+    "name": "Advantage Travel Card",
+    "description": "Our Advantage Travel Card offers 1.3% miles on all purchases. customizable alerts, no foreign transaction fees. Achieve your financial goals faster.",
+    "intent_entity": "card_application-travel_card"
+  },
+  {
+    "service_id": "svc-100",
+    "url": "https://bank.example.com/loans/student-loan",
+    "name": "Preferred Student Loan",
+    "description": "The Preferred Student Loan provides funds from $1000 to $50000. ATM fee reimbursements, no foreign transaction fees. Stay protected against fraud.",
+    "intent_entity": "loan_application-student_loan"
+  },
+  {
+    "service_id": "svc-491",
+    "url": "https://bank.example.com/insurance/life-insurance",
+    "name": "Priority Life Insurance",
+    "description": "Protect what matters with our Priority Life Insurance. instant notifications, financial planning tools. Trusted by millions of customers.",
+    "intent_entity": "insurance_quote-life_insurance"
+  },
+  {
+    "service_id": "svc-517",
+    "url": "https://bank.example.com/investments/ira",
+    "name": "Signature IRA",
+    "description": "Start investing with as little as $1000 with our Signature IRA. free bill pay, monthly statements. Rated #1 in customer satisfaction.",
+    "intent_entity": "investment_opening-ira"
+  },
+  {
+    "service_id": "svc-501",
+    "url": "https://bank.example.com/investments/ira",
+    "name": "Premium IRA",
+    "description": "Our Premium IRA helps you build wealth with mobile banking support, zero liability protection. Rated #1 in customer satisfaction.",
+    "intent_entity": "investment_opening-ira"
+  },
+  {
+    "service_id": "svc-304",
+    "url": "https://bank.example.com/investments/retirement-account",
+    "name": "Premium Retirement Account",
+    "description": "Our Premium Retirement Account helps you build wealth with round-up savings, 24/7 online access. Grow your wealth effortlessly.",
+    "intent_entity": "investment_opening-retirement_account"
+  },
+  {
+    "service_id": "svc-247",
+    "url": "https://bank.example.com/cards/rewards-card",
+    "name": "Elite Rewards Card",
+    "description": "The Elite Rewards Card has no annual fee and direct deposit, ATM fee reimbursements. Perfect for investors. Grow your wealth effortlessly.",
+    "intent_entity": "card_application-rewards_card"
+  },
+  {
+    "service_id": "svc-021",
+    "url": "https://bank.example.com/insurance/health-insurance",
+    "name": "Basic Health Insurance",
+    "description": "Protect what matters with our Basic Health Insurance. high-yield interest rates, free money transfers. Access your money anywhere, anytime.",
+    "intent_entity": "insurance_quote-health_insurance"
+  },
+  {
+    "service_id": "svc-414",
+    "url": "https://bank.example.com/cards/debit-card",
+    "name": "Signature Debit Card",
+    "description": "The Signature Debit Card has no annual fee and round-up savings, monthly statements. Perfect for travelers. Stay protected against fraud.",
+    "intent_entity": "card_application-debit_card"
+  },
+  {
+    "service_id": "svc-264",
+    "url": "https://bank.example.com/cards/credit-card",
+    "name": "Standard Credit Card",
+    "description": "Standard Credit Card - designed with students in mind, offering free money transfers, direct deposit. Grow your wealth effortlessly.",
+    "intent_entity": "card_application-credit_card"
+  },
+  {
+    "service_id": "svc-801",
+    "url": "https://bank.example.com/accounts/savings",
+    "name": "Preferred Savings",
+    "description": "The Preferred Savings is designed for savers. zero liability protection, customizable alerts. Backed by our satisfaction guarantee.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-732",
+    "url": "https://bank.example.com/cards/secured-credit-card",
+    "name": "Essential Secured Credit Card",
+    "description": "Earn 3.8X points on online purchases with the Essential Secured Credit Card. automatic transfers, 24/7 online access. Enjoy peace of mind.",
+    "intent_entity": "card_application-secured_credit_card"
+  },
+  {
+    "service_id": "svc-939",
+    "url": "https://bank.example.com/investments/college-savings-plan",
+    "name": "Premium College Savings Plan",
+    "description": "Our Premium College Savings Plan helps you build wealth with mobile banking support, monthly statements. Achieve your financial goals faster.",
+    "intent_entity": "investment_opening-college_savings_plan"
+  },
+  {
+    "service_id": "svc-032",
+    "url": "https://bank.example.com/cards/prepaid-card",
+    "name": "Standard Prepaid Card",
+    "description": "Standard Prepaid Card - designed with high-net-worth individuals in mind, offering mobile banking support, no foreign transaction fees. Perfect for busy lifestyles.",
+    "intent_entity": "card_application-prepaid_card"
+  },
+  {
+    "service_id": "svc-681",
+    "url": "https://bank.example.com/cards/student-card",
+    "name": "Select Student Card",
+    "description": "The Select Student Card has no annual fee and instant notifications, ATM fee reimbursements. Perfect for high-net-worth individuals. Grow your wealth effortlessly.",
+    "intent_entity": "card_application-student_card"
+  },
+  {
+    "service_id": "svc-879",
+    "url": "https://bank.example.com/accounts/savings",
+    "name": "Basic Savings",
+    "description": "Earn 2.63% APY on balances with our Basic Savings. monthly statements, no monthly maintenance fees. Stay protected against fraud.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-583",
+    "url": "https://bank.example.com/loans/personal-loan",
+    "name": "Ultimate Personal Loan",
+    "description": "Ultimate Personal Loan - fast approval and fraud monitoring, automatic transfers. Trusted by millions of customers.",
+    "intent_entity": "loan_application-personal_loan"
+  },
+  {
+    "service_id": "svc-659",
+    "url": "https://bank.example.com/insurance/pet-insurance",
+    "name": "Advantage Pet Insurance",
+    "description": "Protect what matters with our Advantage Pet Insurance. direct deposit, automatic transfers. Trusted by millions of customers.",
+    "intent_entity": "insurance_quote-pet_insurance"
+  },
+  {
+    "service_id": "svc-530",
+    "url": "https://bank.example.com/loans/debt-consolidation-loan",
+    "name": "Advantage Debt Consolidation Loan",
+    "description": "The Advantage Debt Consolidation Loan provides funds from $100 to $50000. financial planning tools, round-up savings. Take control of your finances.",
+    "intent_entity": "loan_application-debt_consolidation_loan"
+  },
+  {
+    "service_id": "svc-385",
+    "url": "https://bank.example.com/accounts/senior-account",
+    "name": "Select Senior Account",
+    "description": "Select Senior Account - our most popular account option with account insights, budgeting assistance. Rated #1 in customer satisfaction.",
+    "intent_entity": "account_opening-senior_account"
+  },
+  {
+    "service_id": "svc-908",
+    "url": "https://bank.example.com/cards/secured-credit-card",
+    "name": "Premium Secured Credit Card",
+    "description": "Premium Secured Credit Card - designed with families in mind, offering ATM fee reimbursements, fraud monitoring. Enjoy peace of mind.",
+    "intent_entity": "card_application-secured_credit_card"
+  },
+  {
+    "service_id": "svc-080",
+    "url": "https://bank.example.com/accounts/senior-account",
+    "name": "Essential Senior Account",
+    "description": "Our Essential Senior Account offers mobile banking support, fraud monitoring with no minimum balance requirement. Bank on your terms.",
+    "intent_entity": "account_opening-senior_account"
+  },
+  {
+    "service_id": "svc-192",
+    "url": "https://bank.example.com/loans/line-of-credit",
+    "name": "Select Line of Credit",
+    "description": "Our Select Line of Credit offers competitive rates starting at 16.88% APR. fraud monitoring, budgeting assistance. Designed to simplify your banking experience.",
+    "intent_entity": "loan_application-line_of_credit"
+  },
+  {
+    "service_id": "svc-588",
+    "url": "https://bank.example.com/investments/managed-portfolio",
+    "name": "Premium Managed Portfolio",
+    "description": "The Premium Managed Portfolio offers budgeting assistance, round-up savings with professional management. Trusted by millions of customers.",
+    "intent_entity": "investment_opening-managed_portfolio"
+  },
+  {
+    "service_id": "svc-753",
+    "url": "https://bank.example.com/accounts/senior-account",
+    "name": "Basic Senior Account",
+    "description": "Earn 2.97% APY on balances with our Basic Senior Account. account insights, 24/7 online access. Stay protected against fraud.",
+    "intent_entity": "account_opening-senior_account"
+  },
+  {
+    "service_id": "svc-294",
+    "url": "https://bank.example.com/investments/managed-portfolio",
+    "name": "Preferred Managed Portfolio",
+    "description": "Our Preferred Managed Portfolio helps you build wealth with direct deposit, free bill pay. Designed to simplify your banking experience.",
+    "intent_entity": "investment_opening-managed_portfolio"
+  },
+  {
+    "service_id": "svc-965",
+    "url": "https://bank.example.com/loans/business-loan",
+    "name": "Basic Business Loan",
+    "description": "Get approved for a Basic Business Loan with flexible terms from 3 to 20 years. free bill pay, instant notifications. Backed by our satisfaction guarantee.",
+    "intent_entity": "loan_application-business_loan"
+  }
+]

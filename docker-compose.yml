@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  milvus-standalone:
+    image: milvusdb/milvus:v2.6.0
+    container_name: milvus-standalone
+    environment:
+      - ETCD_USE_EMBED=true
+      - ETCD_DATA_DIR=/var/lib/milvus/etcd
+      - ETCD_CONFIG_PATH=/milvus/configs/embedEtcd.yaml
+      - COMMON_STORAGETYPE=local
+      - DEPLOY_MODE=STANDALONE
+    security_opt:
+      - seccomp:unconfined
+    command: ["milvus", "run", "standalone"]
+    ports:
+      - "19530:19530"   # Milvus gRPC
+      - "9091:9091"     # Metrics/health
+      - "2379:2379"     # Embedded etcd
+    volumes:
+      - ./volumes/milvus:/var/lib/milvus
+      - ./embedEtcd.yaml:/milvus/configs/embedEtcd.yaml
+      - ./user.yaml:/milvus/configs/user.yaml
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  app:
+    build: .
+    container_name: semantic-search-app
+    depends_on:
+      - milvus-standalone
+    environment:
+      - MILVUS_HOST=milvus-standalone
+      - MILVUS_PORT=19530
+      - MODEL_DIR=/home/karthik/projects/ai-models/onnx/all-MiniLM-L6-v2
+      - EMBEDDING_DIM=384
+      - INDEX_TYPE=IVF_FLAT
+      - METRIC_TYPE=L2
+      - ORT_PROVIDER=AUTO # AUTO uses CUDA if available in container, else CPU
+    volumes:
+      - ./models/all-MiniLM-L6-v2:/home/karthik/projects/ai-models/onnx/all-MiniLM-L6-v2:ro
+    ports:
+      - "8000:8000"
+    # To enable GPU (NVIDIA) for embeddings, uncomment below and ensure host has nvidia-container-toolkit
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+volumes:
+  milvus_data:

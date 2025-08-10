@@ -1,0 +1,37 @@
+[
+  {
+    "id": "help-001",
+    "url": "https://bank.example.com/help/account-opening",
+    "title": "How to open a new bank account",
+    "content": "To open a new bank account, you need to provide valid identification such as a passport or driver's license, proof of address, and complete an application form. You can visit any branch or complete the process online. For online applications, you'll need to upload scanned copies of your documents and may need to verify your identity through a video call. A minimum initial deposit may be required depending on the account type.",
+    "tags": ["accounts", "onboarding", "new customers"]
+  },
+  {
+    "id": "help-002",
+    "url": "https://bank.example.com/help/cards/debit-card-pin",
+    "title": "Reset your debit card PIN",
+    "content": "You can reset your debit card PIN through multiple channels. The easiest way is through our mobile app: go to Cards > Manage > Reset PIN. You can also reset it at any ATM, by calling our secure helpline at 1-800-123-4567, or by visiting a branch with valid ID. For security reasons, PINs cannot be provided via email or text message. If you've forgotten your PIN, you'll need to request a new one.",
+    "tags": ["cards", "debit cards", "security"]
+  },
+  {
+    "id": "help-003",
+    "url": "https://bank.example.com/help/credit-cards/limits",
+    "title": "Understanding credit card limits",
+    "content": "Your credit card limit is the maximum amount you can spend on your credit card before making a payment. This limit is determined based on your credit score, income, and payment history. You can view your current limit in our mobile app or on your monthly statement. To request a limit increase, you need at least 6 months of good payment history. Temporary limit increases are available for special circumstances like travel or large purchases.",
+    "tags": ["cards", "credit cards", "limits"]
+  },
+  {
+    "id": "help-004",
+    "url": "https://bank.example.com/help/online-banking/security-tips",
+    "title": "Online banking security best practices",
+    "content": "Keep your online banking secure by following these practices: Use strong, unique passwords and change them regularly. Enable two-factor authentication for all transactions. Never share your login credentials or OTPs with anyone, including bank staff. Log out properly after each session. Avoid using public Wi-Fi for banking. Keep your contact information updated to receive security alerts. Check your accounts regularly for unauthorized transactions. Our bank will never ask for your full password or PIN via email, phone, or text.",
+    "tags": ["security", "online banking", "digital"]
+  },
+  {
+    "id": "help-005",
+    "url": "https://bank.example.com/help/transfers/international-wire",
+    "title": "How to send an international wire transfer",
+    "content": "To send an international wire transfer, you'll need: The recipient's full name and address, their bank's name and address, their account number or IBAN, and the bank's SWIFT/BIC code. Log into online banking, select 'Transfers', then 'International Wire'. Enter the amount and currency you wish to send. Verify all details carefully before confirming. International transfers typically take 1-5 business days to complete. Fees vary depending on the destination country and amount sent.",
+    "tags": ["transfers", "international", "payments"]
+  }
+]

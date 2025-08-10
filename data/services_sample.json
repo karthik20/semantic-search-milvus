@@ -1,0 +1,37 @@
+[
+  {
+    "service_id": "svc-001",
+    "url": "https://bank.example.com/accounts/savings",
+    "name": "Premium Savings Account",
+    "description": "Our Premium Savings Account offers competitive interest rates that grow with your balance. Enjoy no monthly fees with a minimum balance of $1,500, free online and mobile banking, and unlimited deposits. Perfect for building your emergency fund or saving for future goals.",
+    "intent_entity": "account_opening-savings"
+  },
+  {
+    "service_id": "svc-002",
+    "url": "https://bank.example.com/accounts/checking",
+    "name": "Everyday Checking Account",
+    "description": "Our Everyday Checking Account provides all the essentials with no minimum balance requirements. Features include a free debit card, access to over 40,000 ATMs nationwide, mobile check deposits, and bill pay services. Direct deposit available for faster access to your funds.",
+    "intent_entity": "account_opening-checking"
+  },
+  {
+    "service_id": "svc-003",
+    "url": "https://bank.example.com/cards/credit/rewards",
+    "name": "Cash Rewards Credit Card",
+    "description": "Earn unlimited 1.5% cash back on all purchases with our Cash Rewards Credit Card. No annual fee, 0% intro APR on purchases and balance transfers for 15 months, and enhanced security features including instant purchase alerts and card lock/unlock from your mobile app.",
+    "intent_entity": "card_application-credit"
+  },
+  {
+    "service_id": "svc-004",
+    "url": "https://bank.example.com/loans/personal",
+    "name": "Personal Loan",
+    "description": "Our Personal Loans offer flexible financing for major expenses, debt consolidation, or unexpected costs. Competitive fixed rates starting at 5.99% APR, loan amounts from $2,000 to $50,000, and repayment terms from 12 to 60 months. No collateral required and no prepayment penalties.",
+    "intent_entity": "loan_application-personal"
+  },
+  {
+    "service_id": "svc-005",
+    "url": "https://bank.example.com/loans/mortgage",
+    "name": "Fixed-Rate Mortgage",
+    "description": "Lock in a competitive rate for the life of your loan with our Fixed-Rate Mortgage. Available in 15, 20, and 30-year terms with as little as 3% down payment for qualified buyers. Our streamlined application process and dedicated mortgage consultants help make homeownership achievable.",
+    "intent_entity": "loan_application-mortgage"
+  }
+]
